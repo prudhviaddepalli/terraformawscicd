@@ -9,6 +9,11 @@ variable "confluent_cloud_api_secret" {
   sensitive   = true
 }
 
+variable "aws_account_id" {
+  description = "The AWS Account ID (12 digits)"
+  type        = string
+}
+
 variable "region" {
   description = "The AWS Region of the existing VPC"
   type        = string
