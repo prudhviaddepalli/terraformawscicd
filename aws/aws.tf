@@ -27,11 +27,11 @@ provider "aws" {
 }
 
 locals {
-  bootstrap_prefix = var.bootstrap_prefix
+  bootstrap_prefix = "aws-terraform-poc-pl"
 }
 
 locals {
-  hosted_zone = var.hosted_zone
+  hosted_zone = "hostedzonepaddepalli"
 }
 
 
