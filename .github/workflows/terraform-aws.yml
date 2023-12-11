@@ -48,6 +48,8 @@ jobs:
           confluent_cloud_api_secret = "${{ secrets.CONFLUENT_CLOUD_API_SECRET }}"
           access_key = "${{ secrets.AWS_ACCESS_KEY_ID }}"
           secret_key = "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          aws_account_id = "492737776546"
+          region = "us-east-1"
           EOF
           cat terraform.tfvars
           
