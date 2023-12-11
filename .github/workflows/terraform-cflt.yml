@@ -47,11 +47,11 @@ jobs:
           confluent_cloud_api_key = "${{ secrets.CONFLUENT_CLOUD_API_KEY }}"
           confluent_cloud_api_secret = "${{ secrets.CONFLUENT_CLOUD_API_SECRET }}"
           aws_account_id = "492737776546"
-          region = "us-east-2"
+          region = "us-east-1"
           subnets_to_privatelink = {
-            "use2-az1" = "subnet-010d5500dc347ce38",
-            "use2-az2" = "subnet-06cc98dd1fb0d3570",
-            "use2-az3" = "subnet-00abf338d7014cd70",
+            "use1-az1" = "subnet-0620ef8e739b28eaa",
+            "use1-az2" = "subnet-013cb394df5b1c447",
+            "use1-az4" = "subnet-0de2aacb446c91fc0",
           }
           
           EOF
