@@ -49,7 +49,13 @@ jobs:
           access_key = "${{ secrets.AWS_ACCESS_KEY_ID }}"
           secret_key = "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
           aws_account_id = "492737776546"
+          vpc_id = "vpc-0ee7745af36422360"
           region = "us-east-1"
+          subnets_to_privatelink = {
+            "use1-az1" = "subnet-0aa8d084ff69b8a5a",
+            "use1-az4" = "subnet-01eb6897b98b36d5f",
+            "use1-az5" = "subnet-0604edf65e24ef90b",
+          }
           EOF
           cat terraform.tfvars
           
