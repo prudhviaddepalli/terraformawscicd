@@ -29,7 +29,7 @@ provider "confluent" {
 }
 
 resource "confluent_environment" "staging" {
-  display_name = "privatelinkpoc"
+  display_name = "privatelinkpoc2"
 }
 
 # Stream Governance and Kafka clusters can be in different regions as well as different cloud providers,
