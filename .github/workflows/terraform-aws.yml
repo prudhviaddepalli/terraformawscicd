@@ -37,7 +37,7 @@ jobs:
       run: |
           terraform init \
           -backend-config=access_key=${{ secrets.BACKEND_STORAGE_ACCOUNT_ACCESS_KEY }} \
-          -backend-config=key=${{ vars.TF_ENV_STATEFILE }}
+          -backend-config=key="aws-poc.terraform.tfstate"
           
     - name: Setup Terraform variables
       working-directory: aws
