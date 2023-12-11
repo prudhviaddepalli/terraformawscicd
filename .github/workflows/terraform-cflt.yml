@@ -50,8 +50,8 @@ jobs:
           region = "us-east-2"
           subnets_to_privatelink = {
             "use2-az1" = "subnet-010d5500dc347ce38",
-            "use2-az4" = "subnet-06cc98dd1fb0d3570",
-            "use2-az5" = "subnet-00abf338d7014cd70",
+            "use2-az2" = "subnet-06cc98dd1fb0d3570",
+            "use2-az3" = "subnet-00abf338d7014cd70",
           }
           
           EOF
