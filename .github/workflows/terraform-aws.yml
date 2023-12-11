@@ -44,8 +44,8 @@ jobs:
       id: vars
       run: |-
           cat > terraform.tfvars <<EOF
-          access_key = "${{ secrets.AWS_ACCESS_KEY_ID }}"
-          secret_key = "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          aws_access_key = "${{ secrets.AWS_ACCESS_KEY_ID }}"
+          aws_secret_key = "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
           aws_account_id = "492737776546"
           vpc_id = "vpc-0ee7745af36422360"
           region = "us-east-1"
