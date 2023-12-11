@@ -3,10 +3,10 @@ name: 'Terraform-Env Dev'
 on:
   push:
     branches:
-      - dev
+      - main
     paths:
       - 'terraform/*.tf'
-      - '.github/workflows/terraform-env-dev.yml'
+      - '.github/workflows/terraform-cflt.yml'
 
 permissions:
   contents: read
