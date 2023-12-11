@@ -8,3 +8,13 @@ variable "confluent_cloud_api_secret" {
   type        = string
   sensitive   = true
 }
+
+variable "region" {
+  description = "The AWS Region of the existing VPC"
+  type        = string
+}
+
+variable "subnets_to_privatelink" {
+  description = "A map of Zone ID to Subnet ID (i.e.: {\"use1-az1\" = \"subnet-abcdef0123456789a\", ...})"
+  type        = map(string)
+}
