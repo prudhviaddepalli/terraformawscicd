@@ -9,7 +9,17 @@ terraform {
       source  = "confluentinc/confluent"
       version = "1.55.0"
     }
+
+  azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 2.55.0"
+    }
   }
+  backend "azurerm" {
+    storage_account_name = "terraformcicd"
+    container_name       = "terraformcicd"
+  }
+  
 }
 
 provider "aws" {
