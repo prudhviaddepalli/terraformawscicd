@@ -19,7 +19,7 @@ provider "confluent" {
 }
 
 resource "confluent_environment" "staging" {
-  display_name = "Staging"
+  display_name = "Devlopment"
 }
 
 # Stream Governance and Kafka clusters can be in different regions as well as different cloud providers,
@@ -85,24 +85,6 @@ resource "confluent_kafka_cluster" "dedicated" {
     id = confluent_network.private-link.id
   }
 }
-
-// 'app-manager' service account is required in this configuration to create 'orders' topic and assign roles
-// to 'app-producer' and 'app-consumer' service accounts.
-resource "confluent_service_account" "app-manager" {
-  display_name = "app-manager"
-  description  = "Service account to manage 'inventory' Kafka cluster"
-}
-
-resource "confluent_role_binding" "app-manager-kafka-cluster-admin" {
-  principal   = "User:${confluent_service_account.app-manager.id}"
-  role_name   = "CloudClusterAdmin"
-  crn_pattern = confluent_kafka_cluster.dedicated.rbac_crn
-}
-
-
-# https://docs.confluent.io/cloud/current/networking/private-links/aws-privatelink.html
-# Set up the VPC Endpoint for AWS PrivateLink in your AWS account
-# Set up DNS records to use AWS VPC endpoints
 
 
 locals {
