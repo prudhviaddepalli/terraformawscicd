@@ -23,3 +23,14 @@ variable "plendpointservice" {
   type        = string
 }
 
+variable "aws_access_key" {
+  description = "The aws access key"
+  type        = string
+}
+
+variable "aws_secret_key" {
+  description = "The aws secret key"
+  type        = string
+}
+
+
