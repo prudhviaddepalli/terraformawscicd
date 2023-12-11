@@ -29,7 +29,7 @@ provider "confluent" {
 }
 
 resource "confluent_environment" "staging" {
-  display_name = "Devlopment"
+  display_name = "privatelinkpoc"
 }
 
 # Stream Governance and Kafka clusters can be in different regions as well as different cloud providers,
@@ -80,21 +80,6 @@ resource "confluent_private_link_access" "aws" {
   }
 }
 
-resource "confluent_kafka_cluster" "dedicated" {
-  display_name = "inventory"
-  availability = "MULTI_ZONE"
-  cloud        = confluent_network.private-link.cloud
-  region       = confluent_network.private-link.region
-  dedicated {
-    cku = 2
-  }
-  environment {
-    id = confluent_environment.staging.id
-  }
-  network {
-    id = confluent_network.private-link.id
-  }
-}
 
 
 locals {
