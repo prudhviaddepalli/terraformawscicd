@@ -46,6 +46,13 @@ jobs:
           cat > terraform.tfvars <<EOF
           confluent_cloud_api_key = "${{ secrets.CONFLUENT_CLOUD_API_KEY }}"
           confluent_cloud_api_secret = "${{ secrets.CONFLUENT_CLOUD_API_SECRET }}"
+          region = "us-east-1"
+          subnets_to_privatelink = {
+            "use1-az1" = "subnet-0123456789abcdef0",
+            "use1-az4" = "subnet-0123456789abcdef1",
+            "use1-az5" = "subnet-0123456789abcdef2",
+          }
+          
           EOF
           cat terraform.tfvars
           
