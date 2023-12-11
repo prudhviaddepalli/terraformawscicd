@@ -1,4 +1,4 @@
-name: 'Terraform-Env Dev'
+name: 'Terraform-aws'
 
 on:
   push:
@@ -51,6 +51,7 @@ jobs:
           aws_account_id = "492737776546"
           vpc_id = "vpc-0ee7745af36422360"
           region = "us-east-1"
+          plendpointservice = "com.amazonaws.vpce.us-east-1.vpce-svc-05474efd5cdac1bec"
           subnets_to_privatelink = {
             "use1-az1" = "subnet-0aa8d084ff69b8a5a",
             "use1-az4" = "subnet-01eb6897b98b36d5f",
