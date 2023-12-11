@@ -16,6 +16,13 @@ provider "aws" {
   region = var.region
 }
 
+locals {
+  bootstrap_prefix = var.bootstrap_prefix
+}
+
+locals {
+  hosted_zone = var.hosted_zone
+}
 
 
 data "aws_vpc" "privatelink" {
