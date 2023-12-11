@@ -39,7 +39,7 @@ data "aws_availability_zone" "privatelink" {
 resource "aws_security_group" "privatelink" {
   # Ensure that SG is unique, so that this module can be used multiple times within a single VPC
   name        = "ccloud-privatelink_${local.bootstrap_prefix}_${var.vpc_id}"
-  description = "Confluent Cloud Private Link minimal security group for ${confluent_kafka_cluster.dedicated.bootstrap_endpoint} in ${var.vpc_id}"
+  description = "Confluent Cloud Private Link minimal security group for confluent in ${var.vpc_id}"
   vpc_id      = data.aws_vpc.privatelink.id
 
   ingress {
