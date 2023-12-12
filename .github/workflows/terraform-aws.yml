@@ -47,13 +47,13 @@ jobs:
           aws_access_key = "${{ secrets.AWS_ACCESS_KEY_ID }}"
           aws_secret_key = "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
           aws_account_id = "492737776546"
-          vpc_id = "vpc-0ee7745af36422360"
+          vpc_id = "vpc-0246d74eae7c1aa94"
           region = "us-east-1"
-          plendpointservice = "com.amazonaws.vpce.us-east-1.vpce-svc-002af720feaa41697"
+          plendpointservice = "com.amazonaws.vpce.us-east-1.vpce-svc-0bd9417bccb7c3f93"
           subnets_to_privatelink = {
-            "use1-az1" = "subnet-0aa8d084ff69b8a5a",
-            "use1-az4" = "subnet-0604edf65e24ef90b",
-            "use1-az2" = "subnet-01eb6897b98b36d5f",
+            "use1-az1" = "subnet-0620ef8e739b28eaa",
+            "use1-az2" = "subnet-013cb394df5b1c447",
+            "use1-az4" = "subnet-0de2aacb446c91fc0",
           }
           EOF
           cat terraform.tfvars
