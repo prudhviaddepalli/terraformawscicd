@@ -29,11 +29,11 @@ provider "aws" {
 }
 
 locals {
-  bootstrap_prefix = "aws-terraform-poc-pl"
+  bootstrap_prefix = "domqgq11z2w"
 }
 
 locals {
-  hosted_zone = "hostedzonepaddepalli"
+  hosted_zone = "domqgq11z2w.us-east-1.aws.confluent.cloud"
 }
 
 
