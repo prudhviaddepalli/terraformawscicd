@@ -46,8 +46,8 @@ jobs:
           cat > terraform.tfvars <<EOF
           confluent_cloud_api_key = "${{ secrets.CONFLUENT_CLOUD_API_KEY }}"
           confluent_cloud_api_secret = "${{ secrets.CONFLUENT_CLOUD_API_SECRET }}"
-          environment = "env-r2gvqk"
-          network_id = "n-6n5210"
+          environment = "env-yg5x9p"
+          network_id = "n-p8o9m0"
           cluster_name = "${{ vars.CLUSTER_NAME }}"
           cluster_availability = "${{ vars.CLUSTER_AVAILABILITY }}"
           ckus = "${{ vars.CKUS }}"
