@@ -3,7 +3,7 @@ data "confluent_environment" "main" {
 }
 
 data "confluent_network" "private-link" {
-  id = var.id
+  id = var.network_id
   environment {
     id = var.environment
   }
