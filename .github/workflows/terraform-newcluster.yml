@@ -48,9 +48,9 @@ jobs:
           confluent_cloud_api_secret = "${{ secrets.CONFLUENT_CLOUD_API_SECRET }}"
           environment = "env-r2gvqk"
           network_id = "n-6n5210"
-          cluster_name = ${{ vars.CLUSTER_NAME }}
-          cluster_availability = ${{ vars.CLUSTER_AVAILABILITY }}
-          ckus = ${{ vars.CKUS }}
+          cluster_name = "${{ vars.CLUSTER_NAME }}"
+          cluster_availability = "${{ vars.CLUSTER_AVAILABILITY }}"
+          ckus = "${{ vars.CKUS }}"
           
           EOF
           cat terraform.tfvars
