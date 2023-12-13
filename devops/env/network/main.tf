@@ -1,3 +1,8 @@
+
+data "confluent_environment" "env" {
+  id = var.environment
+}
+
 resource "confluent_network" "private-link" {
   display_name     = "Private Link Network"
   cloud            = "AWS"
