@@ -29,11 +29,11 @@ provider "aws" {
 }
 
 locals {
-  bootstrap_prefix = "domqgq11z2w"
+  bootstrap_prefix = "dom1w4j462w"
 }
 
 locals {
-  hosted_zone = "domqgq11z2w.us-east-1.aws.confluent.cloud"
+  hosted_zone = "dom1w4j462w.us-east-1.aws.confluent.cloud"
 }
 
 
