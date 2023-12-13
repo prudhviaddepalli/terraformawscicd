@@ -12,3 +12,21 @@ variable "env_name" {
   type        = string
   description = "Environment name"
 }
+
+variable "sr_cloud" {
+  type        = string
+  description = "Schema registry cloud provider like \"AWS\" \"GCP\" \"AZURE\" "
+  default = "AWS"
+}
+
+variable "sr_region" {
+  type        = string
+  description = "Region of the selected cloud provider like \"us-east-2\""
+  default     = "us-east-1"
+}
+
+variable "sr_package" {
+  type        = string
+  description = "Schema registry package name, only allowed values are ESSENTIALS, ADVANCED"
+  default     = "ESSENTIALS"
+}
