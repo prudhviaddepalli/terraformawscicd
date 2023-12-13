@@ -2,8 +2,12 @@ data "confluent_environment" "main" {
   id = var.environment
 }
 
-
-
+data "confluent_network" "private-link" {
+  id = var.id
+  environment {
+    id = var.environment
+  }
+}
 
 resource "confluent_kafka_cluster" "dedicated" {
   display_name = "Privatelink"
