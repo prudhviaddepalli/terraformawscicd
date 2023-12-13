@@ -40,7 +40,7 @@ data "confluent_schema_registry_region" "sr" {
 }
 
 resource "confluent_schema_registry_cluster" "sr" {
-  package = data.confluent_schema_registry_region.essentials.package
+  package = data.confluent_schema_registry_region.sr.package
 
   environment {
     id = confluent_environment.env.id
