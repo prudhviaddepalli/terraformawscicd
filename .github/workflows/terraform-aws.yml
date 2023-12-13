@@ -49,7 +49,7 @@ jobs:
           aws_account_id = "492737776546"
           vpc_id = "vpc-0246d74eae7c1aa94"
           region = "us-east-1"
-          plendpointservice = "com.amazonaws.vpce.us-east-1.vpce-svc-0bd9417bccb7c3f93"
+          plendpointservice = "com.amazonaws.vpce.us-east-1.vpce-svc-0860154777d8dec0b"
           subnets_to_privatelink = {
             "use1-az1" = "subnet-0620ef8e739b28eaa",
             "use1-az2" = "subnet-013cb394df5b1c447",
