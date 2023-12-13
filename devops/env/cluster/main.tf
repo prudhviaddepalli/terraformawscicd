@@ -10,12 +10,12 @@ data "confluent_network" "private-link" {
 }
 
 resource "confluent_kafka_cluster" "dedicated" {
-  display_name = "Privatelink"
-  availability = "SINGLE_ZONE"
+  display_name = var.cluster_name
+  availability = var.cluster_availability
   cloud        = confluent_network.private-link.cloud
   region       = confluent_network.private-link.region
   dedicated {
-    cku = 1
+    cku = var.ckus
   }
   environment {
     id = confluent_environment.staging.id
