@@ -1,4 +1,4 @@
-data "confluent_environment" "main" {
+data "confluent_environment" "env" {
   id = var.environment
 }
 
@@ -18,7 +18,7 @@ resource "confluent_kafka_cluster" "dedicated" {
     cku = var.ckus
   }
   environment {
-    id = confluent_environment.staging.id
+    id = confluent_environment.env.id
   }
   network {
     id = confluent_network.private-link.id
