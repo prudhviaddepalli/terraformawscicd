@@ -46,8 +46,11 @@ jobs:
           cat > terraform.tfvars <<EOF
           confluent_cloud_api_key = "${{ secrets.CONFLUENT_CLOUD_API_KEY }}"
           confluent_cloud_api_secret = "${{ secrets.CONFLUENT_CLOUD_API_SECRET }}"
-          environment = env-r2gvqk
-          network_id = n-6n5210
+          environment = "env-r2gvqk"
+          network_id = "n-6n5210"
+          cluster_name = "PL_Cluster2"
+          cluster_availability = "MULTI_ZONE"
+          ckus = "2"
           
           EOF
           cat terraform.tfvars
