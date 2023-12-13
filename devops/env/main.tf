@@ -27,7 +27,7 @@ provider "confluent" {
   cloud_api_secret = var.confluent_cloud_api_secret
 }
 
-resource "confluent_environment" "staging" {
+resource "confluent_environment" "env" {
   display_name = var.env_name
 }
 
