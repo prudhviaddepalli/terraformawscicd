@@ -43,7 +43,7 @@ resource "confluent_schema_registry_cluster" "essentials" {
   package = data.confluent_schema_registry_region.essentials.package
 
   environment {
-    id = confluent_environment.staging.id
+    id = confluent_environment.env.id
   }
 
   region {
