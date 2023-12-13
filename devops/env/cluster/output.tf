@@ -15,10 +15,10 @@ output "rbac_crn" {
 }
 
 output "env_id" {
-  value = confluent_kafka_cluster.dedicated.environment.id
+  value = confluent_kafka_cluster.dedicated.environment[0].id
 }
 
 output "network_id" {
-  value = confluent_kafka_cluster.dedicated.network.id
+  value = confluent_kafka_cluster.dedicated.network[0].id
 }
 
