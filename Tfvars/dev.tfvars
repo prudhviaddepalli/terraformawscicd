@@ -10,4 +10,4 @@ subnets_to_privatelink = {
   "use1-az2" = "subnet-013cb394df5b1c447",
   "use1-az4" = "subnet-0de2aacb446c91fc0",
   }
-topics = [ "topic1", "topic2", "topic3" ]
+topics = [ "topic1", "topic2", "topic3" , "topic4"]
