@@ -44,8 +44,8 @@ data "aws_vpc" "privatelink" {
   id = var.vpc_id
 }
 
-data "aws_availability_zones" "privatelink" {
-  zone_ids  = local.zones
+data "aws_availability_zone" "privatelink" {
+  zone_id  = local.zones
 }
 
 
@@ -83,7 +83,7 @@ resource "aws_security_group" "privatelink" {
 }
 
 data "aws_subnets" "filtered" {
-  for_each = toset(data.aws_availability_zones.privatelink.zone_ids)
+  for_each = toset(data.aws_availability_zone.privatelink.zone_id)
 
   filter {
     name   = "availability-zone-id"
@@ -142,7 +142,7 @@ resource "aws_route53_record" "privatelink-zonal" {
   records = [
     format("%s-%s%s",
       local.endpoint_prefix,
-      data.aws_availability_zones.privatelink[each.key].name,
+      data.aws_availability_zone.privatelink[each.key].name,
       replace(aws_vpc_endpoint.privatelink.dns_entry[0]["dns_name"], local.endpoint_prefix, "")
     )
   ]
