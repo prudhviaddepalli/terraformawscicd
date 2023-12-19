@@ -45,7 +45,8 @@ data "aws_vpc" "privatelink" {
 }
 
 data "aws_availability_zones" "privatelink" {
-  for_each = local.zones
+  for_each = var.subnets_to_privatelink
+  zone_id  = each.key
 }
 
 
@@ -83,7 +84,7 @@ resource "aws_security_group" "privatelink" {
 }
 
 data "aws_subnets" "filtered" {
-  for_each = toset(data.aws_availability_zones.privatelink[each.key].zone_ids)
+  for_each = toset(data.aws_availability_zones.privatelink.zone_ids)
 
   filter {
     name   = "availability-zone-id"
