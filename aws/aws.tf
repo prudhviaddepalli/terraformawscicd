@@ -36,13 +36,21 @@ locals {
   hosted_zone = "dom1w4j462w.us-east-1.aws.confluent.cloud"
 }
 
+locals {
+  zones = toset(["use1-az1", "use1-az2", "use1-az4"])
+}
 
 data "aws_vpc" "privatelink" {
   id = var.vpc_id
 }
 
 data "aws_availability_zones" "privatelink" {
-  state = "available"
+  for_each = local.zones
+}
+
+data "aws_availability_zone" "privatelink" {
+  for_each = var.subnets_to_privatelink
+  zone_id  = each.key
 }
 
 
@@ -140,7 +148,7 @@ resource "aws_route53_record" "privatelink-zonal" {
   records = [
     format("%s-%s%s",
       local.endpoint_prefix,
-      data.aws_availability_zones.privatelink[each.key].name,
+      data.aws_availability_zone.privatelink[each.key].name,
       replace(aws_vpc_endpoint.privatelink.dns_entry[0]["dns_name"], local.endpoint_prefix, "")
     )
   ]
