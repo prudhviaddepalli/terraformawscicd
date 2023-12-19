@@ -81,6 +81,15 @@ resource "aws_security_group" "privatelink" {
   }
 }
 
+data "aws_subnets" "filtered" {
+  for_each = toset(data.aws_availability_zones.available.zone_ids)
+
+  filter {
+    name   = "availability-zone-id"
+    values = ["${each.value}"]
+  }
+}
+
 resource "aws_vpc_endpoint" "privatelink" {
   vpc_id            = data.aws_vpc.privatelink.id
   service_name      = var.plendpointservice
