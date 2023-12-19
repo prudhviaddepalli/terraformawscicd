@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'aws/*.tf'
-      - '.github/workflows/terraform-aws.yml'
+      - '.github/workflows/terraform-aws1.yml'
 
 permissions:
   contents: read
@@ -53,7 +53,9 @@ jobs:
           subnets_to_privatelink = {
             "use1-az1" = "subnet-0620ef8e739b28eaa",
             "use1-az2" = "subnet-013cb394df5b1c447",
+            "use1-az3" = "subnet-013cb394df5b1c447",
             "use1-az4" = "subnet-0de2aacb446c91fc0",
+            "use1-az5" = "subnet-013cb394df5b1c447",
           }
           EOF
           cat terraform.tfvars
