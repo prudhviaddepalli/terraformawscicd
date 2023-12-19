@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'aws/*.tf'
-      - '.github/workflows/terraform-aws1.yml'
+      - '.github/workflows/terraform-aws.yml'
 
 permissions:
   contents: read
