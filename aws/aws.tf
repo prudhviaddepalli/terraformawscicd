@@ -41,7 +41,7 @@ data "aws_vpc" "privatelink" {
   id = var.vpc_id
 }
 
-data "aws_availability_zone" "privatelink" {
+data "aws_availability_zones" "privatelink" {
   state = "available"
 }
 
