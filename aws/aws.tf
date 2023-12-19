@@ -84,7 +84,7 @@ resource "aws_security_group" "privatelink" {
 }
 
 data "aws_subnets" "filtered" {
-  for_each = toset(data.aws_availability_zone.privatelink.zone_id[0])
+  for_each = var.subnets_to_privatelink
 
   filter {
     name   = "availability-zone-id"
