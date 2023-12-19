@@ -45,8 +45,7 @@ data "aws_vpc" "privatelink" {
 }
 
 data "aws_availability_zones" "privatelink" {
-  for_each = var.subnets_to_privatelink
-  zone_ids  = each.key
+  zone_ids  = local.zones
 }
 
 
