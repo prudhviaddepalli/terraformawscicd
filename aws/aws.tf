@@ -42,8 +42,7 @@ data "aws_vpc" "privatelink" {
 }
 
 data "aws_availability_zone" "privatelink" {
-  for_each = var.subnets_to_privatelink
-  zone_id  = each.key
+  state = "available"
 }
 
 
@@ -82,12 +81,16 @@ resource "aws_security_group" "privatelink" {
 }
 
 data "aws_subnets" "filtered" {
-  for_each = toset(data.aws_availability_zones.available.zone_ids)
+  for_each = toset(data.aws_availability_zones.privatelink.zone_ids)
 
   filter {
     name   = "availability-zone-id"
     values = ["${each.value}"]
   }
+}
+
+locals {
+  public_subnet_ids = [for k, v in data.aws_subnets.filtered : v.ids[0]]
 }
 
 resource "aws_vpc_endpoint" "privatelink" {
@@ -99,7 +102,7 @@ resource "aws_vpc_endpoint" "privatelink" {
     aws_security_group.privatelink.id,
   ]
 
-  subnet_ids          = [for zone, subnet_id in var.subnets_to_privatelink : subnet_id]
+  subnet_ids          = [for zone, subnet_id in locals.public_subnet_ids : subnet_id]
   private_dns_enabled = false
 
 }
